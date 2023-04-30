@@ -1,0 +1,22 @@
+# : import WipeTransition kivy.uix.screenmanager.WipeTransition
+MDScreen:
+    name: "spage"
+    BoxLayout:
+        orientation: 'vertical'
+        AnchorLayout:
+            Image:
+                source:"icon.png"
+                anchor_x:'center'
+                anchor_x:'center'
+        AnchorLayout:
+            MDRaisedButton:
+                text:"Log in"
+                anchor_x:'center'
+                anchor_x:'center'
+                elevation: 0
+                on_release:app.check_user()
+    
+        
+                    
+        
+        

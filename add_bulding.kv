@@ -1,0 +1,86 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "add_building"
+    orientation: 'vertical'
+    
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:name
+        hint_text: "Building or land name"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.70}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:phone
+        hint_text: "Contact Phone Number"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.60}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:link
+        hint_text: "Google map link"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.50}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:word
+        hint_text: "Key words e.g bedsitter, 1 acre"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.40}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    
+    
+        
+   
+       
+    
+       
+    MDRectangleFlatButton:
+        text:"Building"
+        pos_hint:{'x': 0.36, 'y': 0.20}
+        
+        on_release:
+                    app.add_business(1)
+    MDRaisedButton:
+        text:"Back"
+        pos_hint:{'x': 0.07, 'y': 0.20}
+        on_release:app.ai_builder("my_buildings",2)
+        
+        md_bg_color: (52/256, 155/256, 143/256, 1)
+
+    MDRectangleFlatButton:
+        text:"Land"
+        pos_hint:{'x': 0.653, 'y': 0.20}
+       
+        on_release:app.add_business(2)

@@ -1,0 +1,140 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+#: import WipeTransition kivy.uix.screenmanager.WipeTransition
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:self.size
+            pos: self.pos
+    # Set screen name
+    name: "help"
+    # Add box layout
+    BoxLayout:
+        orientation: 'vertical'
+        
+        specific_text_color:(0,0,0,1)
+            
+        MDTopAppBar:
+            elevation:0
+            title: "Contact admin"
+            halign:'center'
+            size_hint:(1,0.09)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+        
+
+        BoxLayout:
+            orientation:'vertical'
+            spacing_hint:0.2
+            Label:
+                size_hint:(1,0.06) 
+            Label:
+                text:"we appreciate any information that\nmake us better"
+                color:33/256,150/256,246/256,1
+                pos_hint: {'center_x': 0.5,'center_y': 0.0}
+                size_hint:(1,0.12)
+            Label:
+                size_hint:(1,0.06) 
+            
+            
+                    
+                        
+                    
+            
+            ScrollView:
+                size_hint:1,2
+                BoxLayout:
+                    orientation:'vertical'
+                    size_hint:1,1.1    
+                    Label:
+                        size_hint:(1,0.12) 
+                    MDTextFieldRect:
+                        mode: "Fill mode"
+                        
+                        rows:1
+                        size_hint_y:0.2
+                        mode: "rectangle"
+                        id:contact
+                        size_hint_x:1
+                        hint_text:"your phonenumber "
+                    Label:
+                        size_hint_y:0.1
+                    MDTextFieldRect:
+                        mode: "Fill mode"
+                        
+                        rows:4
+                        size_hint_y:0.8
+                        mode: "rectangle"
+                        id:care
+                        size_hint_x:1
+                        text:"hello customer care, "
+                    Label:
+                        size_hint:(1,0.12) 
+                    Label:
+                        id:lab1
+                        text:"send infomation " 
+                        pos_hint: {'center_x': 0.25,'center_y': 0.0}
+                        size_hint:(1,0.24)
+                        color:0,0,0,1
+                    Label:
+                        size_hint:(1,0.24) 
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint:(1,0.09)
+                    
+                        Label:
+                            size_hint_x:0.06
+                        MDRaisedButton:
+                            text:'SEND'
+                            on_release:root.manager.transition = NoTransition():app.suggestions()
+                            md_bg_color: 52/256, 155/256, 143/256, 1 
+                        Label:
+                            size_hint_x:0.06 
+                    Label:
+                        size_hint:(1,0.24) 
+                   
+                    Label:
+                        size_hint:(1,0.24) 
+                    Label:
+                        size_hint:(1,0.24) 
+                     
+                    
+                    
+        Label:
+            size_hint:(0.06,0.03)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.09)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:"Back"
+                
+                # on_release:root.manager.transition = NoTransition():root.manager.current = 'home'
+                on_release:root.manager.transition = NoTransition():app.ai_builder("home",2)
+            Label:
+                size_hint_x:0.06
+            Label:
+                size_hint_x:0.06 
+            Label:
+                size_hint_x:0.06 
+            Label:
+                size_hint_x:0.06               
+        Label:
+            size_hint:(0.06,0.03)
+           
+
+
+
+
+
+
+
+
+
+
+
+

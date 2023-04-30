@@ -1,0 +1,89 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "user_invoices"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        
+        MDTopAppBar:
+            elevation:0
+            id:header
+            title:"View sent invoices"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        
+        
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:data
+                    # ThreeLineAvatarListItem:
+                    #     text: "Room 103 | Gilbert Wamichwe"
+                    #     id:file
+                    #     secondary_text:"Rent 4500 ksh | gilbertwamichwe@gmail.com"
+                    #     tertiary_text:"30 days duration agreement"
+                    #     hint_text:"4"
+                    #     on_release:app.informer_msg4(1)
+                    #     ImageLeftWidget:
+                    #         source:"images/a.jpg"
+                    # ThreeLineAvatarListItem:
+                    #     text: "Jane waiguta"
+                    #     id:orientation
+                    #     secondary_text:"Room 2"
+                    #     tertiary_text:"300 ksh"
+                    #     hint_text:"4"
+                    #     on_release:app.informer_msg4(2)
+                    #     ImageLeftWidget:
+                    #         source:"images/a.jpg"
+                    # ThreeLineAvatarListItem:
+                    #     text: "Alex kimemia"
+                    #     id:copoirt
+                    #     secondary_text:"Room 3"
+                    #     tertiary_text:"500 ksh"
+                    #     hint_text:"4"
+                    #     on_release:app.informer_msg4(3)
+                    #     ImageLeftWidget:
+                    #         source:"images/a.jpg"
+                    
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                # on_release:root.manager.current = 'home'
+                on_release:app.ai_builder("home",2)
+                md_bg_color: (52/256, 155/256, 143/256, 1)
+            Label:
+                size_hint_x:0.06
+   
+                 
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.01)           
+                
+
+        

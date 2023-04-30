@@ -1,0 +1,236 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:self.size
+            pos: self.pos
+    # Set screen name
+    name: "detail"
+    # Add box layout
+    BoxLayout:
+        orientation: 'vertical'
+        
+        specific_text_color:(0,0,0,1)
+            
+        MDTopAppBar:
+            elevation:0
+            title: "More information"
+            halign:'center'
+            size_hint:(1,0.03)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+        
+
+        BoxLayout:
+            orientation:'vertical'
+            spacing_hint:0.2
+            size_hint:1,0.5
+            height:"250dp"
+            Label:
+                size_hint:(1,0.06) 
+            Label:
+                id:locsa
+                text:"Pictures and landmarks"
+                color:33/256,150/256,246/256,1
+                pos_hint: {'center_x': 0.28,'center_y': 0.0}
+                size_hint:(1,0.12)
+            Label:
+                size_hint:(1,0.06) 
+            
+            ScrollView:
+                do_scroll_y:False
+                GridLayout:
+                    size_hint:(None,None)
+                    height: self.minimum_height
+                    width: self.minimum_width
+                    do_scroll_x: False
+                    spacing:app.xdim
+                    pos_x:"20dp"
+                    row_force_default:True
+                    row_default_height:"225dp"
+                    row_default_width:"350dp"
+                    cols:5
+                    
+                    
+                        
+                    
+                    Screen:
+                        AsyncImage:
+                            id:p1
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None 
+                    Screen:
+                        AsyncImage:
+                            id:p2
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None 
+                    Screen:
+                        AsyncImage:
+                            id:p3
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None
+                    Screen:
+                        AsyncImage:
+                            id:p4
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None 
+                    Screen:
+                        AsyncImage:
+                            
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None 
+                    
+            ScrollView:
+                size_hint:1,1.9
+                BoxLayout:
+                    orientation:'vertical'
+                    size_hint:1,1.4 
+                    spacing:"20dp"
+                    size_hint:1,None
+                    height:self.minimum_height
+                    padding:[(app.padding),(app.padding),(app.padding),(app.padding)] 
+                    BoxLayout:
+                        orientation: 'vertical'
+                       
+                        size_hint:1,0.001
+                        height:(app.c1/4)
+                    MDCard:
+                        size_hint:1,None
+                        height:app.c1
+                        radius:app.ridas
+                        padding:[(app.padding*2),(app.padding*2),(app.padding*2),(app.padding*2)]
+                        BoxLayout:
+                            id:one5     
+                            orientation: 'vertical'
+                            BoxLayout:
+                               # id:one5     
+                                orientation: 'horizontal'
+                                size_hint:(1,0.12)
+                                MDRaisedButton:
+                                    icon:"map"
+                                    id:one7     
+                                    text:'View google location'
+                                    hint_text:""
+                                    on_release:app.open_link()
+                                    md_bg_color: (0/256,176/256,144/256,1)
+                            MDFlatButton:
+                                text:'' 
+                    
+                    MDCard:
+                        size_hint:1,None
+                        height:"300dp"
+                        radius:app.ridas
+                        padding:[(app.padding*2),(app.padding*2),(app.padding*2),(app.padding*2)]
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDFlatButton:
+                                text:''
+                            MDFillRoundFlatButton:
+                                text:'Description'
+                                md_bg_color: (0/256,176/256,144/256,1)
+                            
+                            Curve:
+                                id:desc
+                                #pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                size_hint:1,0.8
+                                line_color: (0/256,176/256,144/256,1)
+                                text:'good place\n\n\n\n\n'
+                                color:0,0,0,1
+                    MDCard:
+                        size_hint:1,None
+                        height:300
+                        radius:app.ridas
+                        padding:[(app.padding*2),(app.padding*2),(app.padding*2),(app.padding*2)]
+                        BoxLayout:
+                            orientation:'vertical'
+                            MDFlatButton:
+                                text:''
+                            MDFillRoundFlatButton:
+                                text:'More options'
+                                md_bg_color: (0/256,176/256,144/256,1)
+                            MDFlatButton:
+                                text:''
+                            ScrollView:
+                                size_hint:1,1
+                                MDList:
+                                    id:lister
+                                    OneLineListItem:
+                                        text:""
+                                        id:lab0
+                                    OneLineListItem:
+                                        id:lab1
+                                        text:""
+                            BoxLayout:
+                                orientation:'horizontal'
+                                MDFlatButton:
+                                    text:''
+                              
+                                    
+                                MDFlatButton:
+                                    text:'' 
+                    
+                                    
+                                        
+                            
+                    
+                            
+                                    
+
+
+
+
+
+
+
+                   
+        Label:
+            size_hint:(0.06,0.03)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.02)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:"Back"
+                hint_text:""
+                on_release:app.back_intiator(1)
+            Label:
+                size_hint_x:0.06
+        
+           
+                       
+        Label:
+            size_hint:(0.06,0.03)
+           
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "add_staff_pay"
+    orientation: 'vertical'
+    
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:amount
+        hint_text: "Amount"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.70}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:method
+        hint_text: "Method eg physicaly, mpesa"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.60}
+        #
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:receipt
+        hint_text: "Receipt number e.g mpesa c.."
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.50}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:other
+        hint_text: "other description"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.40}
+        #
+        mode: "rectangle"
+        size_hint_x:0.6
+    
+   
+    
+    
+        
+   
+       
+    
+       
+    MDRectangleFlatButton:
+        text:"Add"
+        pos_hint:{'x': 0.56, 'y': 0.20}
+        
+        on_release:app.payment_entry()
+    MDRaisedButton:
+        text:"Back"
+        pos_hint:{'x': 0.137, 'y': 0.20}
+        # on_release:root.manager.current = 'staff_payments'
+        on_release:app.ai_builder("staff_payments",2)
+        md_bg_color: (52/256, 155/256, 143/256, 1)
+    
+
+    

@@ -1,0 +1,119 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "home"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        
+        MDTopAppBar:
+            elevation:0
+            title:"Welcome"
+            id:code
+            pos_hint_x: -0.03
+            #elevation:14
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['reload', lambda x: nav_drawer.toggle_nav_drawer()]]
+   
+        BoxLayout:
+            orientation:"horizontal"
+            size_hint:1,0.52
+            halign:"center"
+          
+            Image:
+                id:p1
+                source: "images/farm.jpg"
+                size:"350dp","400dp"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                size_hint_x: 1
+                size_hint_y: 1 
+                    
+           
+      
+        
+        MDFlatButton:
+            text:""
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:list
+                    OneLineAvatarListItem:
+                        text: "Buildings"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.house(2)
+                        ImageLeftWidget:
+                            source:"images/bui.png"
+                    OneLineAvatarListItem:
+                        text: "Lands"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.shamba(3)
+                        ImageLeftWidget:
+                            source:"images/land.png"
+                    OneLineAvatarListItem:
+                        text: "My Business"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.my_business()
+                        ImageLeftWidget:
+                            source:"images/business.png"
+                    OneLineAvatarListItem:
+                        text: "Invoices"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.user_invoices_data()
+                        ImageLeftWidget:
+                            source:"images/invoice.png"
+                    OneLineAvatarListItem:
+                        text: "Suggestions & Help"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.ai_builder("help",2)
+                        # self.ai_builder("logistics",2)
+                        ImageLeftWidget:
+                            source:"images/sugg.png"
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            padding:[20,20,20,20]
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"My account"
+                # on_release:root.manager.current = 'my_acc'
+                on_release:app.ai_builder("my_acc",2) 
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:'Log out'
+                on_release:app.log_out()
+                md_bg_color: (52/256, 155/256, 143/256, 1) 
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.03)

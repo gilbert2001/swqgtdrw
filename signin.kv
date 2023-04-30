@@ -1,0 +1,91 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:(10000,10000)
+            pos: self.pos
+    # Set screen name
+    name: "signin"
+    orientation: 'vertical'
+
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:name
+        hint_text: "Name"
+        email:True
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.75}
+        
+        mode: "rectangle"
+        size_hint_x:0.55
+    MDTextField:
+        id:phone
+        hint_text: "Phone number"
+        email:True
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.650}
+        
+        mode: "rectangle"
+        size_hint_x:0.55
+    MDTextField:
+        id:email
+        hint_text: "Email"
+        email:True
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.550}
+        
+        mode: "rectangle"
+        size_hint_x:0.55
+        
+    MDTextField:
+        id:first
+        hint_text: "Password"
+        
+        password:True
+        mode: "rectangle"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.45}
+        size_hint_x:0.55
+    MDTextField:
+        id:second
+        hint_text: "Confirm Password"
+        
+        password:True
+        mode: "rectangle"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.35}
+        size_hint_x:0.55
+    
+       
+    MDRaisedButton:
+        text:"Next"
+        pos_hint:{'x': 0.33, 'y': 0.25}
+        size_hint:0.35,0.058
+        on_release:app.sign_up()
+
+    MDRectangleFlatButton:
+        text:"Log in"
+        pos_hint:{'x': 0.33, 'y': 0.10}
+        size_hint:0.35,0.058
+        # on_release:root.manager.current = 'login'
+        on_release:app.ai_builder("login",2)
+   
+    
+        

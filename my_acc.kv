@@ -1,0 +1,86 @@
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "my_acc"
+    orientation: 'vertical'
+    
+    
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:email
+        hint_text: "Email"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.70}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:current
+        hint_text: "Current Password"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.60}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:new
+        hint_text: "New Password"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.50}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:confirm
+        hint_text: "Confirm Password"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.40}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    
+   
+    
+    
+        
+   
+       
+    
+       
+    MDRectangleFlatButton:
+        text:"Change"
+        pos_hint:{'x': 0.58, 'y': 0.20}
+        
+        on_release:app.change_pass()
+    MDRaisedButton:
+        text:"Back"
+        pos_hint:{'x': 0.147, 'y': 0.20}
+        # on_release:root.manager.current = 'home'
+        on_release:app.ai_builder("home",2)
+        md_bg_color: (52/256, 155/256, 143/256, 1)
+    MDRaisedButton:
+        text:"Acc Details"
+        pos_hint:{'x': 0.377, 'y': 0.80}
+        on_release:app.my_detail()
+        md_bg_color: (52/256, 155/256, 143/256, 1)

@@ -1,0 +1,129 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:self.size
+            pos: self.pos
+    # Set screen name
+    name: "results"
+    # Add box layout
+    BoxLayout:
+        orientation: 'vertical'
+        
+        specific_text_color:(0,0,0,1)
+            
+        MDTopAppBar:
+            elevation:0
+            title: 'Available housing'
+            id:asler
+            halign:'center'
+            size_hint:(1,0.09)
+            md_bg_color: (1,1,1,0.7)
+            specific_text_color:(0,0,0,0.7)
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.02)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.09)
+            Label:
+                size_hint_x:0.06
+            TextInput:
+                id:search
+                hint_text:"Search for housing"
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                height:self.minimum_height
+                cursor_color:rgba(253,174,177,255)
+                cursor_width:"2sp"
+                multiline:False
+                
+                background_color:0,0,0,0
+                foreground_color:rgba(253,200,200,255)
+                padding:15
+                #font_name:"MPoppins"
+                hint_text_color:rgba(106,106,109,255)
+            Label:
+                size_hint_x:0.06
+            MDFillRoundFlatButton:
+                text:'Search'
+                
+                on_release:app.search_querry()
+            Label:
+                size_hint_x:0.06
+        Label:
+            size_hint:(1,0.03)
+        BoxLayout:
+            orientation:'vertical'
+            spacing_hint:0.2
+            spacing:100
+            
+            ScrollView:
+                size_hint:1,1
+                scroll_to:0.9
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint:1,None
+                    height:self.minimum_height
+                    row_force_default:False
+                    row_default_height:499
+                    spacing:app.spacingh
+                    padding:[app.padding,0,app.padding,0]
+                    id:wiper
+                    
+                    BoxLayout:
+                        id:inot 
+                        orientation:'vertical'
+        
+                        size_hint:None,None   
+                        height:app.hcomb 
+                                       
+                          
+                    
+        Label:
+            size_hint:(0.06,0.03)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.09)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:"Home"
+                # on_release:root.manager.current = 'choose'
+                on_release:app.ai_builder("choose",2)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:'Options '
+                on_release:app.two_way()
+                md_bg_color: (52/256, 155/256, 143/256, 1) 
+            Label:
+                size_hint_x:0.06 
+            MDRectangleFlatButton:
+                text:'Refresh'
+                on_release:app.refresh_data()
+                md_bg_color: (52/256, 155/256, 143/256, 1) 
+            Label:
+                size_hint_x:0.06 
+            
+        Label:
+            size_hint:(0.06,0.03)
+           
+
+
+
+
+
+
+
+
+
+
+
+

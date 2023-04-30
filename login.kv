@@ -1,0 +1,61 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:(10000,10000)
+            pos: self.pos
+    # Set screen name
+    name: "login"
+    orientation: 'vertical'
+
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+    MDTextField:
+        id:email
+        hint_text: "Email"
+        email:True
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.60}
+        
+        mode: "rectangle"
+        size_hint_x:0.55
+        
+    MDTextField:
+        id:passcode
+        hint_text: "Password"
+        
+        password:True
+        mode: "rectangle"
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.225, 'y': 0.50}
+        size_hint_x:0.55
+    
+       
+    MDRaisedButton:
+        text:"Next"
+        pos_hint:{'x': 0.33, 'y': 0.40}
+        size_hint:0.35,0.058
+        on_release:app.login()
+
+    MDRectangleFlatButton:
+        text:"Sign Up"
+        pos_hint:{'x': 0.33, 'y': 0.10}
+        size_hint:0.35,0.058
+        # on_release:root.manager.current = 'signin'
+        on_release:app.ai_builder("signin",2)
+  
+    
+        

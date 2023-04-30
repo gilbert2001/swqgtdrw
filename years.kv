@@ -1,0 +1,108 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "years"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+        MDTopAppBar:
+            elevation:0
+            title:"Choose year & month"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+        
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    OneLineAvatarListItem:
+                        text: "Buildings"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'status'
+                        on_release:app.ai_builder("status",2)
+                        ImageLeftWidget:
+                            source:"images/b.jpg"
+                    OneLineAvatarListItem:
+                        text: "Lands"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'status'
+                        on_release:app.ai_builder("status",2)
+                        ImageLeftWidget:
+                            source:"images/b.jpg"
+                    OneLineAvatarListItem:
+                        text: "Pay rent"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'status'
+                        on_release:app.ai_builder("status",2)
+                        ImageLeftWidget:
+                            source:"images/b.jpg"
+                    OneLineAvatarListItem:
+                        text: "My Business account"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'shops'
+                        on_release:app.ai_builder("shops",2)
+                        ImageLeftWidget:
+                            source:"images/c.jpg"
+                    OneLineAvatarListItem:
+                        text: "App manager"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'payments'
+                        on_release:app.ai_builder("payments",2)
+                        ImageLeftWidget:
+                            source:"images/d.jpg"
+                    
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            padding:[20,20,20,20]
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                # on_release:root.manager.current = 'selections' 
+                on_release:app.ai_builder("selections",2)
+            Label:
+                size_hint_x:0.06
+            
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.03)

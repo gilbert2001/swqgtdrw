@@ -1,0 +1,109 @@
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "location"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+        MDTopAppBar:
+            elevation:0
+            title:"Choose County"
+            id:code
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+    
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:list
+                    OneLineAvatarListItem:
+                        text: "None"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(0,self.text)
+                       
+                    OneLineAvatarListItem:
+                        text: "Laikipia"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(1,self.text)
+                     
+                    OneLineAvatarListItem:
+                        text: "Nyandarua"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(2,self.text)
+                        
+                    OneLineAvatarListItem:
+                        text: "Nakuru"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(3,self.text)
+                   
+                    OneLineAvatarListItem:
+                        text: "Baringo"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(4,self.text)
+                 
+                    
+                    OneLineAvatarListItem:
+                        text: "Nyeri"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(5,self.text)
+                       
+                    OneLineAvatarListItem:
+                        text: "Isiolo"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.access_locations(6,self.text)
+                       
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            padding:[20,20,20,20]
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                on_release:app.higher_power()
+            Label:
+                size_hint_x:0.06
+           
+            
+        Label:
+            size_hint:(0.06,0.03)

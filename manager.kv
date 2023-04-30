@@ -1,0 +1,124 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "manager"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+        MDTopAppBar:
+            elevation:0
+
+            title:"Choose access"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.04)
+            md_bg_color: (1,1,1,1)
+        
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    OneLineAvatarListItem:
+                        text: "Profiles"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.view_profiles(1)
+                        
+                        ImageLeftWidget:
+                            source:"images/profile.png"
+                    OneLineAvatarListItem:
+                        text: "Staff"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.view_staff()
+                        ImageLeftWidget:
+                            source:"images/staff.png"
+                    
+                    
+                    OneLineAvatarListItem:
+                        text: "Payments"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.view_staff_payments()
+                        ImageLeftWidget:
+                            source:"images/pay.png"
+                    OneLineAvatarListItem:
+                        text: "Logistics"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.view_logistics()
+                        
+                        ImageLeftWidget:
+                            source:"images/logistic.png"
+                   
+                    OneLineAvatarListItem:
+                        text: "Queries and suggestions"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        on_release:app.view_help(1)
+                        
+                        ImageLeftWidget:
+                            source:"images/qns.png"
+                    OneLineAvatarListItem:
+                        text: "Add locations"
+                        secondary_text:"portarit"
+                        tertiary_text:"paor"
+                        hint_text:"4"
+                        # on_release:root.manager.current = 'places'
+                        on_release:app.ai_builder("places",2)
+                        ImageLeftWidget:
+                            source:"images/loca.png"
+                    
+                    
+                    
+                    
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            padding:[20,20,20,20]
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                # on_release:root.manager.current = 'home' 
+                on_release:app.ai_builder("home",2)
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:'Achieves'
+                md_bg_color: (52/256, 155/256, 143/256, 1) 
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.03)

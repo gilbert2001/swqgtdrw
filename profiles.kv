@@ -1,0 +1,101 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "profiles"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        
+        MDTopAppBar:
+            elevation:0
+            id:header
+            title:"View profiles"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        BoxLayout:
+            orientation:"horizontal"
+            size_hint:1,0.2
+            padding:[20,20,20,20]
+            MDTextField:
+                id:search
+                hint_text: "Search"
+        
+                
+                helper_text_mode: "on_focus"
+                icon_right_color: app.theme_cls.primary_color
+            
+                #
+                mode: "rectangle"
+                
+            Label:
+                text:""
+                size_hint: None, None
+                width:"20dp"
+            MDRaisedButton:
+                text:"Go"
+                
+                on_release:app.view_profiles(4)
+           
+        BoxLayout:
+            orientation:"vertical"
+            size_hint:1,0.2
+            Label:
+                text:""
+                size_hint:None,0.01
+            MDRaisedButton:
+                text:"More options"
+                on_release:app.profile_opt()
+                pos_hint: {'center_x': 0.2,'center_y': 0}
+                
+            Label:
+                text:""
+                size_hint:None,0.01
+        
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:data
+                    
+                    
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                # on_release:root.manager.current = 'manager'
+                on_release:app.ai_builder("manager",2)
+                md_bg_color: (52/256, 155/256, 143/256, 1)
+            Label:
+                size_hint_x:0.06
+            
+           
+                 
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.1)           
+                
+
+        

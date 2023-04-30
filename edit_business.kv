@@ -1,0 +1,71 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "edit_business"
+    orientation: 'vertical'
+    
+    MDLabel:
+        id:errorman
+        text:''
+        color: 1,0,0,1
+        size_hint: 1, 0.1
+        
+        halign:'center'
+        pos_hint_y: 0.3
+
+    MDTextField:
+        id:phone
+        hint_text: "Contact Phone Number"
+       
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.60}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:link
+        hint_text: "Google map link"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.50}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    MDTextField:
+        id:word
+        hint_text: "Key words e.g bedsitter, 1 acre"
+        
+        helper_text_mode: "on_focus"
+        icon_right_color: app.theme_cls.primary_color
+        pos_hint:{'x': 0.22, 'y': 0.40}
+        
+        mode: "rectangle"
+        size_hint_x:0.6
+    
+        
+   
+       
+    
+       
+    MDRectangleFlatButton:
+        text:"Edit"
+        pos_hint:{'x': 0.66, 'y': 0.20}
+        
+        on_release:app.edit_business()
+    MDRaisedButton:
+        text:"Back"
+        pos_hint:{'x': 0.17, 'y': 0.20}
+        # on_release:root.manager.current = 'building_tools'
+        on_release:app.ai_builder("building_tools",2)
+        md_bg_color: (52/256, 155/256, 143/256, 1)
+
+   

@@ -1,0 +1,103 @@
+########################################################################
+## MAIN SCREEN
+########################################################################
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size:self.size
+            pos: self.pos
+    # Set screen name
+    name: "options"
+    # Add box layout
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.03)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+        MDTopAppBar:
+            elevation:0
+            title: 'Available options'
+            size_hint:(1,0.09)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,1)
+
+            
+
+
+        BoxLayout:
+            orientation:'vertical'
+            spacing_hint:0.2
+            spacing:100
+            
+            ScrollView:
+                MDList:
+                    OneLineIconListItem:
+                        on_focus:
+                        # on_release:root.manager.current = 'university'
+                        on_release:app.ai_builder("uniiversity",2)
+                        text:'Change county'
+                        
+                        IconLeftWidget:
+                            icon:"office-building-marker"
+                    OneLineIconListItem:
+                        on_focus:
+                        on_release:app.encode_loc()
+                        text:"Choose local location"
+                        
+                        IconLeftWidget:
+                            icon:"map-marker-outline"
+                    OneLineIconListItem:
+                        text:"Sort the results"
+                        # on_release:root.manager.current = 'sort'
+                        on_release:app.ai_builder("sort",2)
+                        IconLeftWidget:
+                            icon:"format-list-bulleted"
+                    OneLineIconListItem:
+                        text:"Help"
+                        # on_release:root.manager.current = 'admin'
+                        on_release:app.ai_builder("admin",2)
+                        IconLeftWidget:
+                            icon:"information"
+                    
+        MDTopAppBar:
+            elevation:0
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            specific_text_color:(0,0,0,12)     
+            elevation:10  
+            Label:
+                size_hint_y:0.06
+            MDRectangleFlatButton:
+                text:"Back"
+                pos_hint:{'x': 0, 'y': 0.4}
+                # on_release:root.manager.current = 'res/ults'
+                on_release:app.ai_builder("results",2)
+            Label:
+                size_hint_y:0.06
+               
+                                 
+                            
+
+           
+
+
+
+
+
+
+
+
+
+
+
+

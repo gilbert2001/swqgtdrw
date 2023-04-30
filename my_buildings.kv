@@ -1,0 +1,66 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "my_buildings"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        
+        MDTopAppBar:
+            elevation:0
+            id:header
+            title:"Select building or land"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            #right_action_items: [['book', lambda x: nav_drawer.toggle_nav_drawer()]]
+        
+        
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:data
+                    
+                    
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.1)
+            md_bg_color: (1,1,1,1)
+            Label:
+                size_hint_x:0.06
+            MDRaisedButton:
+                text:"Back"
+                # on_release:root.manager.current = 'home'
+                on_release:app.ai_builder("home",2)
+                md_bg_color: (52/256, 155/256, 143/256, 2)
+            Label:
+                size_hint_x:0.06
+            
+            MDRaisedButton:
+                text:'Add building/Land'
+                # on_release:root.manager.current = 'add_building'
+                on_release:app.ai_builder("add_buildings",2)
+            Label:
+                size_hint_x:0.06 
+            
+            
+        Label:
+            size_hint:(0.06,0.1)           
+                
+
+        

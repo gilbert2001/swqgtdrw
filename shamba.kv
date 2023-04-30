@@ -1,0 +1,146 @@
+
+
+MDScreen:
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: (1500,1500)
+            pos: self.pos
+    # Set screen name
+    name: "shamba"
+    orientation: 'vertical'
+    
+    BoxLayout:
+        orientation:"vertical"
+        spacing:0
+        MDTopAppBar:
+            elevation:0
+            id:header
+            title:"View Land"
+            pos_hint_x: -0.03
+            
+            size_hint:(1,0.2)
+            md_bg_color: (1,1,1,1)
+            #specific_text_color:(33/256,150/256,243/256,1)
+            specific_text_color:(0,0,0,1)
+            right_action_items: [['reload', lambda x: app.refresh_data(2)]]
+            
+            
+      
+        BoxLayout:
+            orientation:"horizontal"
+            size_hint:1,0.52
+            halign:"center"
+            ScrollView:
+                do_scroll_y:False
+                GridLayout:
+                    size_hint:(None,None)
+                    height: self.minimum_height
+                    width: self.minimum_width
+                    do_scroll_x: False
+                    spacing:(app.xdim+20)
+                    pos_x:"20dp"
+                    row_force_default:True
+                    row_default_height:"225dp"
+                    row_default_width:"350dp"
+                    cols:5
+                    
+                    Screen:
+                        AsyncImage:
+                            id:p1
+                            source: "images/click.png"
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            size_hint_x: None
+                            size_hint_y: None 
+                    Screen:
+                        AsyncImage:
+                            id:p2
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            # pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                            size_hint_x: None
+                            size_hint_y: None 
+                    Screen:
+                        AsyncImage:
+                            id:p3
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            # pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                            size_hint_x: None
+                            size_hint_y: None
+                    Screen:
+                        AsyncImage:
+                            id:p4
+                            source: ""
+                            size:(app.xdim,app.ydim)
+                            pos: '0','67'
+                            # pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                            size_hint_x: None
+                            size_hint_y: None
+                    
+            
+           
+      
+        
+        
+        MDCard:
+            size_hint:1,None
+            height:app.c1
+            
+            radius:app.ridas
+            padding:[(app.padding*2),(app.padding*2),(app.padding*2),(app.padding*2)]
+            BoxLayout:
+                id:one5     
+                orientation: 'vertical'
+                BoxLayout:
+                # id:one5     
+                    orientation: 'horizontal'
+                    size_hint:(1,0.12)
+                    MDRaisedButton:
+                        icon:"map"
+                        id:one7     
+                        text:'More details'
+                        hint_text:""
+                        on_release:app.to_det()
+                        md_bg_color: (0/256,176/256,144/256,1)
+                MDFlatButton:
+                    text:'' 
+        #BoxLayout:
+        BoxLayout:  
+            pos_hint:{'center_x': 0.5,'center_y': 0.2} 
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:data
+                    
+                    
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint:(1,0.09)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:"Home"
+                on_release:app.ai_builder("home",2)
+            Label:
+                size_hint_x:0.06
+            MDRectangleFlatButton:
+                text:'Search'
+                
+                on_release:app.ai_builder("search",2)
+            Label:
+                size_hint_x:0.06 
+            MDRectangleFlatButton:
+                text:'Location'
+                on_release:app.ai_builder("location",2)
+                # on_release:root.manager.current = 'location'
+            Label:
+                size_hint_x:0.06 
+            
+        Label:
+            size_hint:(0.06,0.03)
